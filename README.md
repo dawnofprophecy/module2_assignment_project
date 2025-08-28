@@ -1,7 +1,7 @@
 # Module 2 Assignment Project
 ## Olist Brazilian E-commerce
 
-![alt text](<Screenshot 2025-08-26 192923.png>)
+![alt text](assets/sample-implementation.png)
 
 _______________________________________________________
 ### Step 0: Pre-requisites
