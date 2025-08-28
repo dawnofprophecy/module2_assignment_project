@@ -1,8 +1,28 @@
-# Module2 Assignment Project
-## Olist Dataset
+# Module 2 Assignment Project
+## Olist Brazilian E-commerce
 
+![alt text](<Screenshot 2025-08-26 192923.png>)
+
+
+### Step 0: Pre-requisites
+```conda activate elt```
+
+**GCS**
+1. Login to GCS: 
+    
+    ```gcloud auth application-default login```
+
+2. Ensure you're in the correct Project_ID `module2-assignment-project`:
+
+    ```gcloud config set project PROJECT_ID```
+
+3. Set the quota to the current Project_ID:
+    
+    ```gcloud auth application-default set-quota-project CURRENT-PROJECT```
+_______________________________________________________
 ### Step 1: Ingestion
-#### CSV -> DuckDB -> Parquet -> BigQuery
+
+**CSV -> DuckDB -> Parquet -> BigQuery**
 
 1. Run the duckdb_ingest.py file to create the olist.duckdb database: 
     ```python duckdb_ingest.py```
@@ -24,4 +44,9 @@
     done
     ```
 _______________________________________________________
-### Step 2: ??
+### Step 2: Transform??
+
+
+
+_______________________________________________________
+### Step 3: Analysis??
