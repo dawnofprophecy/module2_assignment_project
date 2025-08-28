@@ -4,15 +4,15 @@
 ### Step 1: Ingestion
 #### CSV -> DuckDB -> Parquet -> BigQuery
 
-1. Run the duckdb_ingest.py file: 
+1. Run the duckdb_ingest.py file to create the olist.duckdb database: 
     ```python duckdb_ingest.py```
 
-2. Execute codes in `project_quickstart.ipynb`
+2. Quick exploration of the DuckDB database (Step 1), execute codes in `project_quickstart.ipynb`
 
-3. Run the export_parquet.py file: 
+3. To export all tables from the DuckDB database (Step 1) to individual Parquet files, run the export_parquet.py: 
     ```python export_parquet.py```
 
-4. To Load parquet files to BigQuery Tables, `cd` to the folder that contains the /parquet folder. Copy-paste and run this code in terminal:
+4. To load the parquet files (from Step 3) to BigQuery Tables, `cd` to the folder that contains the /parquet folder. Copy-paste and run this code in terminal:
     ```
     for f in parquet/*.parquet; do
     tbl=$(basename "$f" .parquet)   # e.g., customers.parquet -> customers
