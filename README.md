@@ -3,7 +3,7 @@
 
 ![alt text](<Screenshot 2025-08-26 192923.png>)
 
-
+_______________________________________________________
 ### Step 0: Pre-requisites
 ```conda activate elt```
 
