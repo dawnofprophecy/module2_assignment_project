@@ -1,8 +1,10 @@
-# module2_assignment_project
+# Module2 Assignment Project
+## Olist Dataset
 
 
 
-### CSV -> DuckDB -> Parquet -> BigQuery
+### Step 1: Ingestion
+#### CSV -> DuckDB -> Parquet -> BigQuery
 
 1. Run the duckdb_ingest.py file
 
@@ -24,3 +26,5 @@
         module2-assignment-project:olist_raw2.$tbl "$f"
     done
     ```
+
+### Step 2: ??
