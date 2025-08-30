@@ -1,0 +1,88 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Staging for raw customers table"
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+      - name: customer_unique_id
+        tests: [not_null]
+
+  - name: stg_sellers
+    description: "Staging for raw sellers table"
+    columns:
+      - name: seller_id
+        tests: [not_null, unique]
+
+  - name: stg_products
+    description: "Staging for raw products table"
+    columns:
+      - name: product_id
+        tests: [not_null, unique]
+      - name: product_category_name
+        tests: [not_null]
+
+  - name: stg_orders
+    description: "Staging for raw orders table"
+    columns:
+      - name: order_id
+        tests: [not_null, unique]
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+  - name: stg_order_items
+    description: "Staging for raw order_items table"
+    columns:
+      - name: order_id
+        tests:
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+      - name: product_id
+        tests:
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+      - name: seller_id
+        tests:
+          - relationships:
+              to: ref('stg_sellers')
+              field: seller_id
+
+  - name: stg_order_payments
+    description: "Staging for raw order_payments table"
+    columns:
+      - name: order_id
+        tests:
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+
+  - name: stg_order_reviews
+    description: "Staging for raw order_reviews table"
+    columns:
+      - name: order_id
+        tests:
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+      - name: review_score
+        tests: [not_null]
+
+  - name: stg_geolocation
+    description: "Staging for raw geolocation table"
+    columns:
+      - name: geolocation_zip_code_prefix
+        tests: [not_null]
+
+  - name: stg_category_translation
+    description: "Staging for category translations"
+    columns:
+      - name: category_pt
+        tests: [not_null]
+      - name: category_en
+        tests: [not_null]
